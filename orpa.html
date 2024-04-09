@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Some pretty things</title>
+  <style>
+    /* Style for dropdown menu */
+   /* Style for dropdown menu */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Hide overflow to prevent scrolling */
+  background-color: #000000; /* Black background */
+}
+
+#space {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('stars.png'); /* Space background image */
+  z-index: -1; /* Place behind other content */
+}
+
+#container {
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+
+
+select {
+  padding: 10px;
+  font-size: 29px;
+  margin: 20px auto; /* Center the dropdown */
+  display: block;
+  background-color: #9BA1D6;
+  border-radius: 15px;
+}
+
+/* Style for image */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Style for Eid Mubarak message */
+#eidMubarak {
+  color: white;
+  font-size: 24px;
+  margin-top: 20px;
+  display: none; /* Initially hide the message */
+}
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: twinkle 1s infinite alternate; /* Twinkle animation */
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer p span {
+  font-weight: bold;
+}
+
+  </style>
+</head>
+<body>
+<div id="space"></div>
+
+<div id="container">
+  <h1>Welcome to Space</h1>
+  <!-- Your content here -->
+</div>
+
+<script>
+  // Create stars dynamically
+// Function to create stars dynamically
+function createStars() {
+  const space = document.getElementById("space");
+  const numStars = 200; // Number of stars
+  const fragment = document.createDocumentFragment();
+
+  for (let i = 0; i < numStars; i++) {
+    const star = document.createElement("div");
+    star.className = "star";
+    star.style.left = `${Math.random() * 100}%`; // Random horizontal position
+    star.style.top = `${Math.random() * 100}%`; // Random vertical position
+    fragment.appendChild(star);
+  }
+
+  space.appendChild(fragment);
+}
+
+createStars(); // Call the function to create stars
+
+</script>
+
+<div id="container">
+
+  <img id="mainImage" src="image1.png" alt="Image 1">
+  <!-- Dropdown menu -->
+  <select id="imageSelector" onchange="changeImage()">
+    <option value="image1">144p</option>
+    <option value="image2">240p</option>
+    <option value="image3">360p</option>
+    <option value="image4">720p</option>
+    <option value="image5">1080p</option>
+  </select>
+  
+  <!-- Eid Mubarak message -->
+  <p id="eidMubarak">>>>> beauty of moon💙</p>
+
+</div>
+
+<footer id="copyright">
+  <p>&copy; <span id="year"></span> Rifauzzaman Rifat & Urfa Hasan Fattah.  All rights reserved.</p>
+</footer>
+<script>
+  // Get the current year
+const currentYear = new Date().getFullYear();
+
+// Set the current year in the copyright text
+document.getElementById("year").textContent = currentYear;
+</script>
+<script>
+  // Function to change image based on dropdown selection
+  function changeImage() {
+    var selectedValue = document.getElementById("imageSelector").value;
+    var image = document.getElementById("mainImage");
+    var eidMubarakMessage = document.getElementById("eidMubarak");
+    var top=document.getElementById("container")
+    // Change image source based on selected value
+    switch(selectedValue) {
+      case "image1":
+        image.src = "image1.png";
+        eidMubarakMessage.style.display = "none"; // Hide Eid Mubarak message
+        top.style.display="block";
+        top.textContent="Welcome to space";
+        break;
+      case "image2":
+        image.src = "image2.png";
+        eidMubarakMessage.style.display = "none"; // Hide Eid Mubarak message
+        top.textContent="Beautiful";
+        top.style.display="block";
+        break;
+      case "image3":
+        image.src = "image3.png";
+        eidMubarakMessage.style.display = "none"; // Hide Eid Mubarak message
+        top.style.display="block";
+        top.textContent="Pretty";
+        break;
+      case "image4":
+        image.src = "image4.png";
+        eidMubarakMessage.style.display = "none"; // Hide Eid Mubarak message
+        top.style.display="block";
+        top.textContent="Prettier";
+        break;
+      case "image5":
+        image.src = "orpa.png";
+        eidMubarakMessage.style.display = "block"; // Hide Eid Mubarak message
+        top.style.display="none";
+        break;
+      default:
+        image.src = "default.png";
+        eidMubarakMessage.style.display = "none"; // Hide Eid Mubarak message
+        break;
+    }
+  }
+</script>
+
+</body>
+</html>
