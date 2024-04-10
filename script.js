@@ -8,7 +8,7 @@ const passwordRedirectMap = {
   "tabassum":"/tabassum.html",
   "a.fattah":"a.fattah.html",
   "ankhi":"/ankhi.html",
-  "shofiur":"/shofiur.html",
+  "shofiur":"/shofiur.html"
 };
 
 // Function to validate the password and redirect to the corresponding website
