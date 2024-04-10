@@ -2,7 +2,7 @@
 const passwordRedirectMap = {
   "orpa": "/orpa.html",
   "taiyeba": "/taiyeba.html",
-  "nuha": "/nuha.html",
+  "nuhatakia": "/nuha.html",
   "maria":"/maria.html",
   "rifat":"/rifat.html",
   "tabassum":"/tabassum.html",
