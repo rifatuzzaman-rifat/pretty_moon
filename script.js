@@ -1,13 +1,14 @@
 // Object to store passwords and their corresponding websites
 const passwordRedirectMap = {
   "orpa": "/orpa.html",
-  "taiyba": "/taiyba.html",
+  "taiyeba": "/taiyeba.html",
   "nuha": "/nuha.html",
   "maria":"/maria.html",
   "rifat":"/rifat.html",
   "tabassum":"/tabassum.html",
   "a.fattah":"a.fattah.html",
   "ankhi":"/ankhi.html",
+  "shofiur":"/shofiur.html",
 };
 
 // Function to validate the password and redirect to the corresponding website
